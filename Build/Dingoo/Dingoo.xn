@@ -1,0 +1,25 @@
+ENTRY(AppMain)
+OUTPUT_FORMAT("elf32-littlemips", "elf32-littlemips", "elf32-littlemips")
+OUTPUT_ARCH(mips)
+SECTIONS { .dingoo 0x80A00000 : { Dummy.o (.text)
+                                  *(.text*)
+                                  *(.rodata*)
+                                  *(.data*)
+                                  *(.eh_frame*)
+                                  *(.gcc_except_table*)
+                                  _gp = ALIGN(16) + 0x7ff0;
+                                  *(.sdata)
+                                  *(.lit8) 
+                                  *(.lit4)
+                                }
+                                  _fbss = .;
+           .bss :               {
+                                  *(.sbss) 
+                                  *(.scommon)
+                                  *(.bss)
+                                  *(COMMON)
+                                }
+                                  _end = . ;
+           /DISCARD/ : { *(*) }
+         }
+

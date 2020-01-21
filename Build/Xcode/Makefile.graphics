@@ -1,0 +1,14 @@
+DEFINES = -DPremultipliedARGB32Pixels
+
+SOURCE_DIR = ../..
+GRAPHICS_DIR = $(SOURCE_DIR)/Data
+
+make: allgraphics
+
+MakeLaser: $(SOURCE_DIR)/Tools/MakeLaser.c
+	gcc -std=c99 $(DEFINES) -o $@ $<
+
+clean:
+	rm -rf Graphics MakeLaser
+
+include ../Common/Makefile.graphics

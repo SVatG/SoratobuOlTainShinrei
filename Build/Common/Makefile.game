@@ -1,0 +1,24 @@
+GAME_C_FILES =	Graphics/Bitmap.c \
+				Graphics/DrawingBitmaps.c \
+				Graphics/DrawingCircles.c \
+				Graphics/DrawingLines.c \
+				Graphics/DrawingPixels.c \
+				Graphics/DrawingRectangles.c \
+				Graphics/DrawingRLEBitmaps.c \
+				Graphics/DrawingStraightLines.c \
+				Graphics/PNG.c \
+				Game/Random.c \
+				Game/Bullets.c \
+				Game/Controllers.c \
+				Game/Decorations.c \
+				Game/Enemy.c \
+				Game/FrameRateManager.c \
+				Game/Game.c \
+				Game/Main.c \
+				Game/Object.c \
+				Game/ParallaxBackground.c \
+				Game/Player.c \
+				Game/SimpleAllocator.c \
+				Game/Sprite.c \
+				Graphics/RLEBitmap.c \
+				Game/Utils.c

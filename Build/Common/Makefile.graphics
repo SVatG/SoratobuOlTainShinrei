@@ -1,0 +1,30 @@
+LASER_FILES =	Graphics/Sprites.laser \
+				Graphics/Backgrounds/NightSky.laser
+
+SPRITES =	Sprites/Bullets.png?RLE.32x32 \
+			Sprites/Ectoplasm.png?RLE.32x32 \
+			Sprites/Flame.png?RLE.16x32 \
+			Sprites/Font.png?RLE.8x8 \
+			Sprites/OL.png?RLE.24x32 \
+			Sprites/Orb.png?RLE.16x16 \
+			Sprites/PlayerBulletFlash.png?RLE.16x16 \
+			Sprites/PlayerBullets.png?RLE.16x16 \
+			Sprites/PlayerBullets2.png?RLE.16x16 \
+			Sprites/Splat.png?RLE.32x32 \
+			Sprites/Star.png?RLE.16x16
+
+NIGHTSKY = 	Backgrounds/NightSky/NightSky1.png?RLE \
+			Backgrounds/NightSky/NightSky2.png?RLE \
+			Backgrounds/NightSky/NightSky3.png?RLE \
+			Backgrounds/NightSky/NightSky4.png?RLE
+
+allgraphics: $(LASER_FILES)
+
+Graphics/Sprites.laser: $(GRAPHICS_DIR)/Sprites/*.png MakeLaser
+	@mkdir -p $(dir $@)
+	./MakeLaser $@ $(SPRITES:%=$(GRAPHICS_DIR)/%)
+
+Graphics/Backgrounds/NightSky.laser: $(GRAPHICS_DIR)/Backgrounds/NightSky/*.png MakeLaser
+	@mkdir -p $(dir $@)
+	./MakeLaser $@ $(NIGHTSKY:%=$(GRAPHICS_DIR)/%)
+
